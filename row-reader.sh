@@ -7,10 +7,10 @@ case $1 in
 
    -n)
       v_num=$2
-      tail $3 -n $2 | head $3 -n 1
+      head -n $2 $3 | tail -n 1
    ;;
    *)
       v_num=$(wc $1) 
-      shuf -i 0-$v_num -n 1
+      shuf -i 0-${v_num} -n 1
    ;;
 esac
